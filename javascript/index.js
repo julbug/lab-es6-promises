@@ -65,6 +65,7 @@ obtainInstruction('steak', 0)
   .then( (step6) => {
     obtainInstruction('steak', 7)
   .then( (step7) => {
+   
     document.querySelector("#steak").innerHTML += `<li>${step0}</li>`
     
     document.querySelector("#steak").innerHTML += `<li>${step1}</li>`
@@ -79,7 +80,10 @@ obtainInstruction('steak', 0)
  
     document.querySelector("#steak").innerHTML += `<li>${step6}</li>`
   
-    document.querySelector("#steak").innerHTML += `<li>${step7}</li> <li>Stake is ready!</li>`
+    document.querySelector("#steak").innerHTML += `<li>${step7}</li> <li>Steak is ready!</li>`
+
+    document.querySelector("#steakImg").removeAttribute("hidden");
+  
     
   });
 }).catch((err) =>{});
@@ -95,24 +99,24 @@ obtainInstruction('steak', 0)
 
 // Iteration 3 using async/await
 
-async function makeBroccoli() {
+async function makeBroccoli(food, step) {
 try{
   const step0 = await obtainInstruction('broccoli', [0]);
-   console.log(step0);
+   document.querySelector("#broccoli").innerHTML += `<li>${step0}</li>`
    const step1 = await obtainInstruction('broccoli', [1]);
-   console.log(step1);
+   document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`
    const step2 = await obtainInstruction('broccoli', [2]);
-   console.log(step2);
+   document.querySelector("#broccoli").innerHTML += `<li>${step2}</li>`
    const step3 = await obtainInstruction('broccoli', [3]);
-   console.log(step3);
+   document.querySelector("#broccoli").innerHTML += `<li>${step3}</li>`
    const step4 = await obtainInstruction('broccoli', [4]);
-   console.log(step4);
+   document.querySelector("#broccoli").innerHTML += `<li>${step4}</li>`
    const step5 = await obtainInstruction('broccoli', [5]);
-   console.log(step5);
+   document.querySelector("#broccoli").innerHTML += `<li>${step5}</li>`
    const step6 = await obtainInstruction('broccoli', [6]);
-   console.log(step6);
+   document.querySelector("#broccoli").innerHTML += `<li>${step6}</li> <li>Broccoli is ready!</li>`
+   document.querySelector("#broccoliImg").removeAttribute("hidden");
 
-   return {resolve: [step0, step1, step2, step3, step4, step5, step6]}
   
 } catch (err) {
   console.log(err)
